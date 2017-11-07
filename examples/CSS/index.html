@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link type="text/css" rel="stylesheet" href="css/stilius.css" />
+
+    <style>
+      /* fonts*/
+      @fontface{
+        font-family: manokietassriftas;
+        src: url('HOMOARAK.TTF');
+      }
+
+
+
+
+
+      /* id selectors */
+      #pirmas{
+        color: yellow;
+      }
+
+      #antras{
+        color: green !important;
+      }
+
+
+      #trecias{
+        color: red;
+      }
+
+      /* class selectors */
+      .paskutiniai{
+        letter-spacing: 3px;
+        color:white;
+      }
+
+      /* attribute selectors */
+      [class="pas"]{
+        color: blue;
+      }
+
+      /* attribute selectors */
+      [readonly]{
+        height: 40px;
+        background-color: purple;
+        border-radius: 20px;
+      }
+
+      /* link elements selectors with pseudo class */
+      a{
+        color: blue;
+      }
+
+      /*a:visited{
+        color: black;
+      }*/
+
+      a:hover{
+        color:white;
+        border: 1px solid white;
+      }
+
+      a:active{
+        color:red;
+      }
+
+      div a{
+        color: red;
+      }
+
+      div a:hover{
+        color: purple;
+      }
+
+      p, div a{
+        text-decoration: none;
+        text-transform: uppercase;
+        font-family: Verdana;
+      }
+      /* all elements */
+      *{
+        font-family: manokietassriftas;
+      }
+
+    </style>
+  </head>
+  <body>
+
+    <h1>Dienotvarkė</h1>
+    <p id="pirmas">
+      Dokumentas skirtas dienotvarkės planavimui.
+    </p>
+    <p id="antras" style="color:blue;">
+      Dokumentas skirtas dienotvarkės planavimui.
+    </p>
+    <p id="trecias">
+      Dokumentas skirtas dienotvarkės planavimui.
+    </p>
+    <p class="paskutiniai">
+      Dokumentas skirtas dienotvarkės planavimui.
+    </p>
+    <p class="paskutiniai">
+      Dokumentas skirtas dienotvarkės planavimui.
+    </p>
+    <p class="pastas">
+      Dokumentas skirtas dienotvarkės planavimui.
+    </p>
+
+    <input type="text" name="" value="Mano vardas auksinis kardas" readonly />
+    <hr>
+    <a href="http://www.vilniuscoding.lt">Vilnius coding</a>
+    <a href="http://www.paskoluklubas.lt">Paskolos</a>
+    <a href="http://www.traders.lt">Prekyba akcijomis</a>
+    <a href="http://www.asfasfasf.lt">Prekyba akcijomis</a>
+
+    <div>
+      <a href="http://www.vilniuscoding.lt">Vilnius coding</a>
+    </div>
+    <div>
+      <a href="http://www.traders.lt">Prekyba akcijomis</a>
+    </div>
+  </body>
+</html>

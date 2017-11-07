@@ -1,0 +1,15 @@
+body{
+  background-color: black;
+}
+h1{
+  color:#ffd900;
+  opacity: 1;
+}
+
+h1::selection {
+    color: red;
+    background: red;
+}
+p{
+  font-family: "Times New Roman", Times, serif;
+}
