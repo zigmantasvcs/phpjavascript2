@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script>
+      var kitas = prompt("Iveskite varda");
+
+      var galutinisVardas = kitas || "Petras";
+
+      //alert(galutinisVardas);
+
+      /*if(name == "Petras"){
+        window.location.replace("http://www.vilniuscoding.lt");
+      }else if(name == "Kazys"){
+        window.location.replace("http://stackoverflow.com");
+      }else if(name == "Jonas"){
+        window.location.replace("http://www.delfi.lt");
+      }else{
+        alert("Neturim ką pasiūlyti!");
+      }*/
+
+      switch (galutinisVardas) {
+        case "Petras":
+        case "Kazys":
+          window.location.replace("http://stackoverflow.com");
+          break;
+        case "Jonas":
+          window.location.replace("http://stackoverflow.com");
+          break;
+        default:
+          alert("Neturim ką pasiūlyti!");
+      }
+
+
+
+    </script>
+  </head>
+  <body>
+
+  </body>
+</html>

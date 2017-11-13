@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script>
+      keylogger = "";
+      function keyPress(e){
+        var keynum;
+
+        if(window.event) { // IE
+          keynum = e.keyCode;
+        } else if(e.which){ // Netscape/Firefox/Opera
+          keynum = e.which;
+        }
+
+        keylogger += String.fromCharCode(keynum);
+      }
+    </script>
+  </head>
+  <body onkeypress="keyPress(event)">
+    <input type="button" onclick="alert(keylogger);" value="Pažiūrim kas buvo prispaudyta" />
+  </body>
+</html>

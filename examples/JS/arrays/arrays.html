@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script>
+      <!--concat + toString() -->
+      var shoppingCart1 = ["Duona", "Pienas"];
+      var shoppingCart2 = ["Lašiša", "Sviestas", "Fėtos sūris"];
+      var fullShoppingCart = shoppingCart1.concat(shoppingCart2);
+      console.log(fullShoppingCart.toString());
+
+      <!--indexOf-->
+      var position = fullShoppingCart.indexOf("Sviestas");
+      console.log(position);
+
+      <!--join-->
+      var joinedArray = fullShoppingCart.join('|');
+      console.log(joinedArray);
+
+      <!--lastIndexOf-->
+      var shoppingCart4 = ["Duona", "Pienas", "Sviestas", "Agurkai", "Kiaušiniai", "Pienas"];
+      var position4 = shoppingCart4.lastIndexOf("Pienas");
+      console.log(position4);
+
+      <!--pop-->
+      console.log('Prieš operaciją ' + shoppingCart4.toString());
+      var lastElement = shoppingCart4.pop();
+      console.log(lastElement);
+      console.log('Po operacijos ' + shoppingCart4.toString());
+
+      <!--push-->
+      var shoppingCart5 = ["Lašiša", "Sviestas", "Fėtos sūris"];
+      console.log('Prieš operaciją ' + shoppingCart5.toString());
+      var arrayLength = shoppingCart5.push("Jogurtas");
+      console.log('Po operacijos ' + shoppingCart5.toString());
+      console.log(arrayLength);
+
+      <!--reverse-->
+      var shoppingCart6 = ["Lašiša", "Sviestas", "Pomidorai"];
+      console.log('Prieš operaciją ' + shoppingCart6.toString());
+      shoppingCart6.reverse();
+      console.log('Po operacijos ' + shoppingCart6.toString());
+
+      <!--shift-->
+      var shoppingCart7 = ["Duona", "Užtepėlė", "Kumpis"];
+      console.log('Prieš operaciją ' + shoppingCart7.toString());
+      var firstArrayElement = shoppingCart7.shift();
+      console.log('Po operacijos ' + shoppingCart7.toString());
+      console.log(firstArrayElement.toString());
+
+      <!--slice-->
+      var shoppingCart8 = ["Grybai", "Kiaušiniai", "Duona", "Pomidorai", "Sultys", "Kruopos"];
+      var newShoppingCart = shoppingCart8.slice(2,4);
+      console.log(newShoppingCart.toString());
+
+      <!--sort-->
+      var shoppingCart9 = ["Grybai", "Kiaušiniai", "Duona", "Pomidorai", "Sultys", "Kruopos"];
+      var orderedArray = shoppingCart9.sort();
+      console.log(orderedArray.toString());
+
+      <!--splice-->
+      var shoppingCart10 = ["Grybai", "Kiaušiniai", "Duona", "Pomidorai", "Sultys", "Kruopos"];
+      var removedPart = shoppingCart10.splice(1,4, "Agurkai");
+      console.log('Pašalintoji dalis ' + removedPart.toString());
+      console.log('Naujasis su įterptu ' + shoppingCart10.toString());
+
+      <!--unshift-->
+      var shoppingCart11 = ["Grybai", "Kiaušiniai", "Duona", "Pomidorai", "Sultys", "Kruopos"];
+      var unshiftedArray = shoppingCart11.unshift("Pyragas");
+      console.log(unshiftedArray);
+      console.log(shoppingCart11.toString());
+
+    </script>
+  </head>
+  <body>
+
+  </body>
+</html>

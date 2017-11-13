@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script>
+      var car = {
+        year: 2010,
+        color: "Raudona",
+        model: "Audi",
+        info: function(){
+          return "Automobilis " + this.year + " metų. Spalva " + this.color + ". Modelis " + this.model;
+        }
+      };
+
+      var car1 = {
+        year: 2015,
+        color: "žalia",
+        model: "BMW",
+        info: function(){
+          return "Automobilis " + this.year + " metų. Spalva " + this.color + ". Modelis " + this.model;
+        }
+      };
+
+    var autos = [car, car1];
+
+
+
+    console.log(autos[1].info());
+
+
+    </script>
+  </head>
+  <body>
+
+  </body>
+</html>

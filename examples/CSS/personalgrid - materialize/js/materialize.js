@@ -8519,7 +8519,7 @@ if (Vel) {
       weekdaysShort: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],
 
       // Materialize modified
-      weekdaysLetter: ['S', 'M', 'T', 'W', 'T', 'F', 'S'],
+      weekdaysLetter: ['P', 'A', 'T', 'K', 'P', 'Š', 'S'],
 
       // Today and clear
       today: 'Today',
