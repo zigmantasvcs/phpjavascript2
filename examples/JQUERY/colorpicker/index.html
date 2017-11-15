@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script>
+      $(function(){
+        $("div").mouseover(labadiena);
+      })
+
+
+      function labadiena(){
+        var backgroundColor = $(this).css("background-color");
+        $("body").css({"background-color":backgroundColor});
+      }
+    </script>
+  </head>
+  <style>
+    div{
+      height: 20px;
+      width: 20px;
+      border: 1px solid black;
+    }
+  </style>
+  <body>
+    <div style="background-color:red">
+
+    </div>
+    <div style="background-color:blue">
+
+    </div>
+    <div style="background-color:green">
+
+    </div>
+    <div style="background-color:yellow">
+
+    </div>
+  </body>
+</html>

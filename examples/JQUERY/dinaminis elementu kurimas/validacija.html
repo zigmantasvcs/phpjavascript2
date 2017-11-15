@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script>
+      $(function(){
+
+        var input = $("<input class='elementas' />");
+        $("#container").text(input);
+
+
+        var errorLabel = $("<span>Laukas privalomas</span>");
+        errorLabel.hide();
+        //errorLabel.prop("class", "errorHide");
+        $("#container").text("errorLabel");
+
+        $(".elementas").blur(function(){
+          if($(this).val() == ""){
+            errorLabel.css({color: "red"});
+            errorLabel.fadeIn(500, function(){
+              setTimeout(function(){
+                errorLabel.fadeOut(500, function(){
+
+                });
+              }, 2000);
+
+            });
+
+          }
+        })
+
+      })
+
+    </script>
+    <style media="screen">
+      .errorShow{
+        display: inline;
+      }
+      .errorHide{
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container">
+
+    </div>
+  </body>
+</html>

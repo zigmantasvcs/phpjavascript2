@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script>
+      // kai dokumentas uzkrautas trumpesnė versija
+      $(function(){
+        $("#laukas").on("keyup", function(){
+          AssignTextToH();
+        })
+      })
+
+
+
+      function AssignTextToH(){
+        var laukoReiksme = $("#laukas").val();
+        $("h1").text(laukoReiksme);
+      }
+
+
+    </script>
+  </head>
+  <body>
+    <input id="laukas"/>
+    <h1></h1>
+  </body>
+</html>

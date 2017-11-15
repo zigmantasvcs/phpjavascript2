@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script>
+      $(function(){
+        var div = $("<div></div>");
+        div.prop("id", "elements");
+        div.prop("class", "box"); // pakeicia klase
+        div.prop("class", "box1"); // pakeicia klase
+        div.addClass("box2"); // prideda klase
+        div.removeClass("box1"); // atima klase
+        //div.css({height:"100px", width:"100px", "background-color":"purple" })
+
+        $("body").append(div);
+      })
+
+
+    </script>
+    <style>
+      .box2{
+        height:100px;
+        width:100px;
+        background-color:purple;
+      }
+    </style>
+
+  </head>
+  <body>
+  </body>
+</html>
