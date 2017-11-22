@@ -20,8 +20,8 @@
     <div class="container">
       <div class="row">
         <?php
-          session_start();
-          $_SESSION["username"] = "Petras";
+          //session_start();
+          //$_SESSION["username"] = "Petras";
           require_once("includes\menu.php")
         ?>
       </div>

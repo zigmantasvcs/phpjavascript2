@@ -23,37 +23,37 @@
 
       <div class="row">
         <h1>Registracijos forma</h1>
-        <form class="col s12" action="php/login.php" method="post">
+        <form class="col s12" action="api/users/create.php" method="post">
           <div class="row">
             <div class="input-field col s6">
-              <input id="name" type="text" class="validate">
+              <input id="name" name="name" type="text" class="validate">
               <label for="name">Vardas</label>
             </div>
             <div class="input-field col s6">
-              <input id="surname" type="text" class="validate">
+              <input id="surname" name="surname" type="text" class="validate">
               <label for="surname">Pavardė</label>
             </div>
           </div>
           <div class="row">
             <div class="input-field col s12">
-              <input id="birthday" type="text" class="datepicker">
+              <input id="birthday" name="birthday" type="text" class="datepicker">
               <label for="birthday">Gimimo data</label>
             </div>
           </div>
           <div class="row">
             <div class="input-field col s12">
-              <input id="username" type="text" class="validate">
+              <input id="username" name="username" type="text" class="validate">
               <label for="username">Vartotojo vardas</label>
             </div>
           </div>
           <div class="row">
             <div class="input-field col s12">
-              <input id="password" type="password" class="validate">
+              <input id="password" name="password" type="password" class="validate">
               <label for="password">Slaptažodis</label>
             </div>
             <div class="input-field col s12">
-              <input id="password" type="password" class="validate">
-              <label for="password">Pakatokite slaptažodį</label>
+              <input id="password2" name="password2" type="password" class="validate">
+              <label for="password2">Pakatokite slaptažodį</label>
             </div>
           </div>
 
