@@ -13,36 +13,26 @@
     </style>
   </head>
   <body>
-
-
-
     <div class="container">
       <div class="row">
-        <?php require_once("includes\menu.php") ?>
+        <?php
+          //session_start();
+          //$_SESSION["username"] = "Petras";
+          require_once("includes\menu.php")
+        ?>
       </div>
 
       <div class="row">
+        <?php
+          session_start();
+          if(isset($_GET["error"])){
+            echo "<h1>".$_GET["error"]."</h1>";
+            //unset($_SESSION["error"]);
+          }
 
-        <form class="col s12" action="api/users/read.php" method="post">
 
-          <div class="row">
-            <div class="input-field col s12">
-              <input id="username" name="username" type="text" class="validate">
-              <label for="username">Vartotojo vardas</label>
-            </div>
-          </div>
 
-          <div class="row">
-            <div class="input-field col s12">
-              <input id="password" name="password" type="password" class="validate">
-              <label for="password">Slaptažodis</label>
-            </div>
-          </div>
-
-          <button class="btn waves-effect waves-light" type="submit" name="action">Submit
-          </button>
-
-        </form>
+         ?>
       </div>
 
       <div class="row">

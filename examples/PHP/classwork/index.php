@@ -1,7 +1,3 @@
-<?php
-  ini_set('session.gc_maxlifetime', 10);
-  session_set_cookie_params(10);
-?>
 <!DOCTYPE html>
 <html>
   <head>
@@ -20,8 +16,6 @@
     <div class="container">
       <div class="row">
         <?php
-          //session_start();
-          //$_SESSION["username"] = "Petras";
           require_once("includes\menu.php")
         ?>
       </div>

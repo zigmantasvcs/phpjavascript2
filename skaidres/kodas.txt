@@ -1,0 +1,48 @@
+		$response = new stdClass();
+		$response->status = "ok";
+		$myJSON = json_encode($response);
+		echo $myJSON;	
+
+
+$resultToReturn = array();
+
+    while ($myrow = $result->fetch_assoc()) {
+      $event = new stdClass();
+      $event->id = $myrow["id"];
+      $event->name = $myrow["name"];
+      array_push($resultToReturn, $event);
+    }
+
+    $myJSON = json_encode($resultToReturn);
+
+    echo $myJSON;
+
+
+
+$("#submit").on("click", function(event){
+			event.preventDefault();
+			
+			$.ajax({
+				type        : 'POST', // define the type of HTTP verb we want to use (POST for our form)
+				url         : 'api/users/create.php', // the url where we want to POST
+				data        : $("#form").serialize(), // our data object
+				dataType    : 'json', // what type of data do we expect back from the server
+				encode          : true
+			})
+            // using the done promise callback
+            .done(function(data) {
+
+                // log data to the console so we can see
+                console.log(data); 
+
+                // here we will handle errors and validation messages
+            })
+			.fail(function (xhr, ajaxOptions, thrownError) {
+				console.log(xhr.status); 
+				console.log(thrownError);
+				console.log(ajaxOptions);
+	
+			  });
+		});
+
+      });

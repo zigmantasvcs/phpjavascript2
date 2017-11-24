@@ -1,21 +1,15 @@
 <?php
+  session_start();
+
 //-------------------- PRISIJUNGIMAS----------------
-  // Apsirašome parametrus
-  $servername = "localhost";
-  $username = "root";
-  $password = "";
-  $dbname = "phpjs2";
+  require_once("../conn.php");
+  $conn = GetConnection();
+  ValidateConnection($conn);
 
- // Sukuriamo objektas
-  $conn = new mysqli($servername, $username, $password, $dbname);
-
-  // Patikriname prisijungimą
-  if($conn->connect_error){
-    die("Connection failed: ".$conn->connect_error);
-  }
 //--------------------DUOMENŲ IŠ FORMOS PATIKRINIMAS----------------
   if(empty($_POST["name"])){
-    echo "Klaida su name!";
+    $_SESSION["error"] = "Klaida. Netinkamas vartotojo vardas!";
+    header('Location: ../../error.php');
   }
 
   if(empty($_POST["surname"])){
@@ -26,7 +20,7 @@
 
   if($stmt = $conn->prepare(
     "INSERT INTO users
-      (name, surname,birthday, username, password, email,created, status)
+      (name, surname,birthdaya, username, password, email,created, status)
      VALUES
       (?, ?, ?, ?, ?, ?, NOW(), 1)")
   )
@@ -51,10 +45,8 @@
       echo "Viskas ok!";
     }
     else{
-      echo $stmt->error;
+      $_SESSION["error"] = "Klaida. Kreipkitės į tinklapio administratorių!";
+      header('Location: ../../error.php');
     }
-
   }
-
-
  ?>
