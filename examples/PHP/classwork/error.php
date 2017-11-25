@@ -16,22 +16,15 @@
     <div class="container">
       <div class="row">
         <?php
-          //session_start();
-          //$_SESSION["username"] = "Petras";
           require_once("includes\menu.php")
         ?>
       </div>
 
       <div class="row">
         <?php
-          session_start();
           if(isset($_GET["error"])){
             echo "<h1>".$_GET["error"]."</h1>";
-            //unset($_SESSION["error"]);
           }
-
-
-
          ?>
       </div>
 

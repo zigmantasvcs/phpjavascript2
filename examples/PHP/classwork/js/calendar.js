@@ -8,10 +8,6 @@ function initCalendar(){
   var jauSkaiciuojamDienas = false;
   var einamojiDiena = 0;
 
-
-
-
-
   for(var i=0;i<savaiciuSkaicius;i++){
     var savaiteBox = GetWeekBox();
 
@@ -37,12 +33,11 @@ function initCalendar(){
       if(jauSkaiciuojamDienas){
         einamojiDiena++;
 
-        dienaBox.prop("id", "day"+einamojiDiena);
-
+//#UPDATE BEGIN
+        dienaBox.prop("id", "day"+GetYear()+GetMonth()+GetDayFromNumber(einamojiDiena));
+//#UPDATE END
         dienaBox.text(einamojiDiena);
       }
-
-
 
       savaiteBox.append(dienaBox);
     }
@@ -50,14 +45,20 @@ function initCalendar(){
 
     $("#calendar").append(savaiteBox);
 
-    $(".day").each(function(index){
-      $(this).delay(40*index).fadeIn(300);
-    })
+//#UPDATE BEGIN
+  // iškelt už ciklo
+//#UPDATE END
+
+
   }
+//#UPDATE BEGIN
+  GetEvents();
 
 
-
-
+  $(".day").each(function(index){
+    $(this).delay(40*index).fadeIn(300);
+  })
+//#UPDATE END
 
 }
 
@@ -71,11 +72,7 @@ function GetDayBox(){
       height: $("#calendar").height()
     })
   })
-
-
-
   return div;
-
 }
 
 function GetWeekBox(){
@@ -117,6 +114,24 @@ function GetFirstMonthDay(){
   return new Date(year, month, 1);
 }
 
+// #UPDATE BEGIN
+function GetYear(){
+  var date = new Date();
+  return date.getFullYear();
+}
+
+function GetMonth(){
+  var date = new Date();
+  return date.getMonth()+1;
+}
+
+function GetDayFromNumber(day){
+  if(String(day).length == 1){
+    return "0"+day;
+  }
+  return day;
+}
+// #UPDATE END
 function GetFirstMonthWeekDay(){
   var firstMonthDay = GetFirstMonthDay();
   var firstMonthWeekDay = firstMonthDay.getDay();
@@ -150,3 +165,31 @@ function GetMonthNameBox(){
   div.html(heading);
   return div;
 }
+//#UPDATE BEGIN
+function GetEvents(){
+  $.ajax({
+    type: "POST",
+    url: "api/calendar/read.php",
+    dataType: "json",
+    encode: true
+  })
+  .done(function(data){
+    if(!data.error){
+      $.each(data, function(index, item){
+        var date = item.eventdate.substring(0,10);
+        var newdate = date.replace(/-/g,"");
+        var dayId = "day" + newdate;
+        var span = $("<span></span>");
+        span.text(item.event);
+
+        $("#"+dayId).append(span);
+      })
+    }
+  })
+  .fail(function(response, ajaxOptions, thrownException){
+    console.log(response.status);
+    console.log(ajaxOptions);
+    console.log(thrownException);
+  });
+}
+//#UPDATE END

@@ -99,9 +99,6 @@
           console.log(ajaxOptions);
           console.log(thrownException);
         });
-
-
-
       });
 
     </script>
